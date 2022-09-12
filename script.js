@@ -1,21 +1,22 @@
 const btnEl = document.getElementById('submit-btn')
 const fullnameEl = document.getElementById('name-input')
 const emailEl = document.getElementById('email-input')
-const passwordEl = document.getElementById('password-input')
+const phonenumberEl = document.getElementById('phonenumber-input')
 const textareaEl = document.getElementById('textarea-input')
 
 
 let nameValid = false
 let emailValid = false
-let passwordValid = false
+let phoneNumberValid = false
 let textareaValid = false
 
 
 btnEl.addEventListener('click', () => {
-    nameValidation(emailValid)
-    emailValid(emailValid)
-    passwordValidation(passwordValid)
-    console.log()
+    nameValidation(nameValid)
+    emailaddressValidation(emailValid)
+    phoneNumberValidalidation(phoneNumberValid)
+    textValidation(textareaValid)
+    // console.log(phonenumberEl.value.slice(0, 4))
 })
 
 
@@ -24,21 +25,28 @@ btnEl.addEventListener('click', () => {
 nameValidation = (nameValid) => {
     if (fullnameEl.value.length > 4) {
         nameValid = true
-        console.log("name");
+        console.log(nameValid);
     }
 }
 
-emailValid = (emailValid) => {
+emailaddressValidation = (emailValid) => {
     if (emailEl.value.includes('@') && emailEl.value.split('@')[0].length > 2 && emailEl.value.split('@')[1].length > 4) {
-        emailValidnameValid = true
-        console.log("Email");
+        emailValid = true
+        console.log(emailValid);
     }
 }
 
-passwordValidation = (passwordEl) => {
-    if (passwordEl.value.length > 8 && /[0-9]/.test(passwordEl.value)) {
-        emailValidnameValid = true
-        console.log("Email");
+phoneNumberValidalidation = (phoneNumberValid) => {
+    if (phonenumberEl.value.length < 12 && phonenumberEl.value.slice(0, 4) == '+961' && phonenumberEl.value.slice(4, 5) == '3' || phonenumberEl.value.length < 13 && phonenumberEl.value.slice(0, 4) == '+961' && phonenumberEl.value.slice(4, 5) == '7') {
+        phoneNumberValid = true
+        console.log(phoneNumberValid);
+    }
+}
+
+textValidation = (textareaValid) => {
+    if (textareaEl.value.length > 99) {
+        textareaValid = true
+        console.log(textareaValid);
     }
 }
 
