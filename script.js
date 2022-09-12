@@ -1,6 +1,8 @@
 /////////////////////////////////////////////////
 // I KNOW MY IS NOT CLEAN BUT NO TIME TO CLEAN IT
 /////////////////////////////////////////////////
+
+// ELEMENTS
 const btnEl = document.getElementById('submit-btn')
 const fullnameEl = document.getElementById('name-input')
 const emailEl = document.getElementById('email-input')
@@ -11,13 +13,13 @@ const wrong2 = document.getElementById('wrong2')
 const wrong3 = document.getElementById('wrong3')
 const wrong4 = document.getElementById('wrong4')
 
-
+// VARS FOR VALIDATION
 let nameValid = false
 let emailValid = false
 let phoneNumberValid = false
 let textareaValid = false
 
-
+// FUNTIONS FOR CONDITIONS
 nameValidation = () => {
     if (fullnameEl.value.length > 4) {
         nameValid = true
@@ -27,7 +29,9 @@ nameValidation = () => {
 }
 
 emailaddressValidation = () => {
-    if (emailEl.value.includes('@') && emailEl.value.split('@')[0].length > 2 && emailEl.value.split('@')[1].length > 4) {
+    if (emailEl.value.includes('@')
+        && emailEl.value.split('@')[0].length > 2
+        && emailEl.value.split('@')[1].length > 4) {
         emailValid = true
     } else {
         emailValid = false
@@ -35,7 +39,12 @@ emailaddressValidation = () => {
 }
 
 phoneNumberValidalidation = () => {
-    if (phonenumberEl.value.length < 12 && phonenumberEl.value.slice(0, 4) == '+961' && phonenumberEl.value.slice(4, 5) == '3' || phonenumberEl.value.length < 13 && phonenumberEl.value.slice(0, 4) == '+961' && phonenumberEl.value.slice(4, 5) == '7') {
+    if (phonenumberEl.value.length < 12
+        && phonenumberEl.value.slice(0, 4) == '+961'
+        && phonenumberEl.value.slice(4, 5) == '3'
+        || phonenumberEl.value.length < 13
+        && phonenumberEl.value.slice(0, 4) == '+961'
+        && phonenumberEl.value.slice(4, 5) == '7') {
         phoneNumberValid = true
     } else {
         phoneNumberValid = false
@@ -50,7 +59,7 @@ textValidation = () => {
     }
 }
 
-
+// EVENT LISTENER FOR SUBMIT BUTTON
 btnEl.addEventListener('click', (e) => {
     e.preventDefault()
     nameValidation()
@@ -58,6 +67,7 @@ btnEl.addEventListener('click', (e) => {
     phoneNumberValidalidation()
     textValidation()
 
+    // CHANGE THE DISPLAY
     if (!nameValid) {
         console.log(nameValid);
         wrong1.style.display = "block"
@@ -93,12 +103,3 @@ btnEl.addEventListener('click', (e) => {
 
     }
 })
-
-
-
-
-
-
-
-
-
