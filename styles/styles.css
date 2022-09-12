@@ -319,7 +319,6 @@ textarea:not(:placeholder-shown)~.floating-label,
 input:not(:focus):valid~.floating-label {
     top: -40px;
     bottom: 10px;
-    left: 10px;
     font-size: 12px;
     opacity: 1;
     color: #6c7781;
