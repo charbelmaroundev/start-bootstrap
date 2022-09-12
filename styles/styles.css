@@ -137,6 +137,7 @@ a {
 }
 
 .about-section {
+    padding: 5rem;
     display: flex;
     justify-content: center;
     background-color: #1abc9c;
@@ -185,10 +186,176 @@ a {
 }
 
 .form {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer {
+.input-group {
+    position: relative;
+    margin: 20px 0;
+    width: 40vw;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #757575;
+    width: 40vw;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    /* color: #4285f4; */
+}
+
+.bar {
+    position: relative;
+    display: block;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    bottom: 1px;
+    position: absolute;
+    /* background: #4285f4; */
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* animations */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #4285f4;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #4285f4;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #4285f4;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+textarea:focus~.floating-label,
+textarea:not(:placeholder-shown)~.floating-label,
+input:not(:focus):valid~.floating-label {
+    top: -40px;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    opacity: 1;
+    color: #6c7781;
+}
+
+.scheme-des textarea {
+    width: 40vw;
+    resize: none;
+    font-size: 18px;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    /* left: 20px; */
+    top: 10px;
+    transition: 0.2s ease all;
+    color: #999999;
+    font-size: 18px;
+}
+
+.form-float {
+    margin-top: 5rem;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-btn {
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 2.5rem 3rem;
+    border: none;
+    background-color: #1abc9c;
+}
+
+/* .footer {
     background-color: #2c3e50;
 }
 
@@ -237,7 +404,9 @@ a {
 
 .copyright div {
     padding: 3rem;
-}
+} */
+
+
 
 @media (max-width: 1200px) {
     html {
