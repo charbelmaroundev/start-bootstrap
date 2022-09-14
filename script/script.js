@@ -102,4 +102,27 @@ btnEl.addEventListener('click', (e) => {
         wrong4.style.display = "none"
 
     }
+
+    if (nameValid && emailValid && phoneNumberValid && textareaValid) {
+
+
+
+        let url = "http://localhost/bootstrap/add_messages.php";
+        let parameters = {
+            method: 'POST',
+            body: new URLSearchParams({
+                fullname: fullnameEl.value,
+                email: emailEl.value,
+                phonenumber: phonenumberEl.value,
+                message: textareaEl.value
+            })
+        }
+        fetch(url, parameters)
+            .then(respone => respone.json())
+            .then(data => console.log(data));
+
+
+    }
 })
+
+
