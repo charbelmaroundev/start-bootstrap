@@ -1,19 +1,19 @@
-// const messagesEL = document.querySelector(".messages-list")
+ const messagesEL = document.querySelector(".messages-list")
 
 
-// // let messages = []
+let messages = []
 
-// // fetch('http://localhost/bootstrap/messages.php')
-// //     .then((response) => response.json())
-// //     .then((data) => data.forEach(element => {
-// //         messages.push(element.message)
-// //     }));
+fetch('http://localhost/bootstrap/messages.php')
+    .then((response) => response.json())
+    .then((data) => data.forEach(element => {
+        messages.push(element.message)
+    }));
 
 
 
-// // console.log(messagesEL);
+console.log(messagesEL);
 
-// // console.log(messages);
+console.log(messages);
 
 
 
